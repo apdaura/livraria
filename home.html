@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Livraria Daura</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="./dist/styles.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+        <script src="node_modules/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="first-line">
+                <img src="img/logo.png" alt="logo" class="logo">
+                <ul class="top-menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="categorias.html">Categorias</a></li>
+                    <li><a href="colecoes.html">Coleções</a></li>
+                </ul>
+                <a href="login.html" class="login-button">Login</a>
+            </div>
+            <div class="top-left">
+                <p id="slogan">Comece Uma Incrível <span class="destaque-amarelo">Aventura</span> Investindo Em Um Livro Hoje.</p>
+                <p id="welcome">Bem-vindo à nossa livraria! cada livro que você compra não é apenas uma história, é um passaporte para novos mundos, aventuras emocionantes e possibilidades infinitas. Entre em nossa coleção selecionada, repleta de histórias aguardando para serem descobertas.</p>
+                <div class="search-wrapper">
+                    <span class="search-container">
+                        <i class="fa fa-search"></i>
+                        <input type="text" id="query" placeholder="Encontre seu novo livro aqui..." class="search-input" name="query">
+                    </span>
+                    <form action="resultado-busca.html" method="GET" onsubmit="return handleSearch();">
+                        <button type="submit" class="search-button">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="selection">
+                <h1 class="inline-element">Lançamentos</h1>
+                <p class="inline-element">Ver todos</p>
+            </div>
+            <div class="carousel">
+                <div class="carousel-wrapper" id="launch-results"></div>
+                <button class="carousel-button left" onclick="sliderScrollLeft('#launch-results')">&lt;</button>
+                <button class="carousel-button right" onclick="sliderScrollRight('#launch-results')">&gt;</button>
+            </div>
+            <div class="selection">
+                <h1 class="inline-element">Mais Vendidos</h1>
+                <p class="inline-element">Ver todos</p>
+            </div>
+            <div class="carousel">
+                <div class="carousel-wrapper" id="best-seller-results"></div>
+                <button class="carousel-button left" onclick="sliderScrollLeft('#best-seller-results')">&lt;</button>
+                <button class="carousel-button right" onclick="sliderScrollRight('#best-seller-results')">&gt;</button>
+            </div>
+            <div class="selection">
+                <h1 class="inline-element">Categorias</h1>
+                <p class="inline-element">Ver todos</p>
+            </div>
+            <div>
+                <ul class="nav-list">
+                    <li><a href="categorias.html">Todas</a></li>
+                    <li><a href="#fiction">Ficção</a></li>
+                    <li><a href="#history">História</a></li>
+                    <li><a href="#philosophy">Filosofia</a></li>
+                    <li><a href="#biography">Biografia</a></li>
+                </ul>
+                <div id="results"></div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Sobre Nós</h3>
+                    <p>A Livraria Daura é sua fonte confiável para uma ampla seleção de livros. Desde clássicos atemporais até os mais recentes lançamentos, temos algo para todos os amantes da leitura.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="categorias.html">Categorias</a></li>
+                        <li><a href="colecoes.html">Coleções</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contato</h3>
+                    <p>Rua dos Livros, 123, Cidade, Estado, 45678-000</p>
+                    <p>Email: contato@livrariadaura.com.br</p>
+                    <p>Telefone: (11) 1234-5678</p>
+                    <div class="socials">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Livraria Daura. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+    <script src="./script.js">
+        document.addEventListener('DOMContentLoaded', function() {
+        });
+    </script>
+    
+
+    </body>
+</html>

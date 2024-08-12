@@ -1,0 +1,482 @@
+@font-face {
+    font-family: 'irish';
+    src: url(../font/IrishGrover-Regular.ttf) format('truetype');
+}
+
+$branco-principal: #F9F9F9;
+$amarelo-principal: #FECB1C;
+$amarelo-hover: #9C7C10;
+$azul-principal: #0D0E12;
+$cinza-unselected: #c0c0c0;
+$cor-fundo: #f4f4f4;
+$cor-input: #fff;
+$cor-Texto: #333;
+
+body {
+    background-color: $branco-principal;
+    color: $azul-principal;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: relative;
+    background-image: url('../img/fundo-menu.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: $branco-principal;
+    padding: 3em 6em;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $azul-principal;
+    opacity: 0.97;
+    z-index: 1;
+}
+
+header * {
+    position: relative;
+    z-index: 2;
+}
+
+.first-line {
+    height: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    width: 100%;
+    max-width: 14rem;
+    height: auto;
+}
+
+.top-menu {
+    list-style-type: none;
+    margin-right: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+
+    li {
+        font-size: 1.3rem;
+        margin: 0.5em;
+
+        a {
+            text-decoration: none;
+            color: $branco-principal;
+            font-size: 1.3rem;
+            font-weight: normal;
+
+            &:hover {
+                color: $amarelo-principal;
+            }
+        }
+    }
+}
+
+.login-button {
+    text-decoration: none;
+    background-color: $amarelo-principal;
+    color: $azul-principal;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $amarelo-hover;
+    }
+}
+
+.top-left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+#slogan {
+    font-family: 'irish', Arial, Helvetica, sans-serif;
+    font-size: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+
+    .destaque-amarelo {
+        color: $amarelo-principal;
+    }
+}
+
+#welcome {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.search-wrapper {
+    display: flex;
+    width: 100%;
+
+    .search-container {
+        width: 44rem;
+        display: flex;
+        align-items: center;
+        border-radius: 0.5rem;
+        background-color: $branco-principal;
+
+        i {
+            padding-left: 1rem;
+            font-size: 20px;
+            color: $cinza-unselected;
+        }
+
+        .search-input {
+            border: none;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            outline: none;
+            margin-right: 3rem;
+        }
+    }
+
+    .search-button {
+        margin-left: 2rem;
+        background-color: $amarelo-principal;
+        color: $azul-principal;
+        font-weight: bold;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $amarelo-hover;
+        }
+    }
+}
+
+main {
+    background-color: $branco-principal;
+    color: black;
+    padding: 3em 6em;
+}
+
+.selection {
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        position: relative;
+        font-size: 2rem;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -0.1rem;
+            width: 3rem;
+            height: 0.2rem;
+            background-color: black;
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    }
+}
+
+.inline-element {
+    display: inline-block;
+    margin: 0;
+}
+
+.carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .carousel-wrapper {
+        display: flex;
+        padding-left: 50px;
+        height: 450px;
+        width: auto;
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 10px !important;
+
+        img {
+            min-width: 185px;
+            max-width: 147px;
+            height: 300px;
+            background-size: cover;
+            margin: 5px 10px;
+            cursor: pointer;
+            transition: 0.5s ease;
+            z-index: 2;
+
+            &:hover {
+                transform: scale(1.4);
+                z-index: 5;
+            }
+        }
+    }
+
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+
+        &.left {
+            left: 10px;
+        }
+
+        &.right {
+            right: 10px;
+        }
+    }
+}
+
+.nav-list {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    li {
+        margin-right: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        padding: 5px 1px;
+        display: block;
+        position: relative;
+        font-weight: bold;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0.2rem;
+            background-color: black;
+            transform: scaleX(0);
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.login-container {
+    background-color: $cor-input;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    width: 100%;
+    max-width: 400px;
+    margin: 2em auto;
+
+    h1 {
+        text-align: center;
+        color: $azul-principal;
+        margin-bottom: 1.5em;
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+
+    .form-group {
+        margin-bottom: 1em;
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            color: $cor-Texto;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+
+            &:focus {
+                border-color: $amarelo-principal;
+                outline: none;
+                box-shadow: 0 0 0 2px rgba($amarelo-principal, 0.2);
+            }
+        }
+    }
+
+    .forgot-password {
+        margin-top: 0.5em;
+        text-align: right;
+        font-size: 0.9rem;
+
+        a {
+            color: $cinza-unselected;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .submit-button,
+    .signup-button {
+        width: 100%;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: $branco-principal;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit-button {
+        background-color: $amarelo-hover;
+
+        &:hover {
+            background-color: $amarelo-principal;
+        }
+    }
+
+    .signup-button {
+        background-color: lighten(#0D0E12, 20%);
+        color: $branco-principal;
+
+        &:hover {
+            background-color: darken($azul-principal, 10%);
+        }
+    }
+}
+
+.image-background {
+    background-image: url('../img/pgconstrucao.png');
+    background-size: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.manu {
+    background-image: url('../img/pgconstrucao.png');
+    background-size: 70rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 48rem;
+    width: 100%;
+}
+
+footer {
+    background-color: $azul-principal;
+    color: $branco-principal;
+    padding: 3em 6em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 2em;
+    margin-bottom: 1em;
+
+    .h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5em;
+        color: $branco-principal;
+    }
+
+    p, a {
+        font-size: 1rem;
+        color: $branco-principal;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $amarelo-principal;
+        text-decoration: underline;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5em;
+}
+
+.footer-section .socials {
+    display: flex;
+    margin-top: 1em;
+}
+
+.footer-section .social-icon {
+    font-size: 1.5rem;
+    color: $branco-principal;
+    margin-right: 1em;
+    text-decoration: none;
+
+    .social-icon:hover {
+        color: $amarelo-principal;
+    }
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid $branco-principal;
+    padding-top: 1em;
+    margin-top: 1em;
+}
